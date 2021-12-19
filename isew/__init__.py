@@ -22,6 +22,12 @@ def create_app(test_config=None):
         os.makedirs(app.instance_path)
     except OSError:
         pass
+    
+    # a simple page that welcomes the API
+    @app.route('/')
+    def home():
+        return """Esta es la API REST de ISEW, tenemos los siguientes métodos disponibles: /hello, /auth/register """
+
 
     # a simple page that says hello
     @app.route('/hello')
@@ -36,5 +42,6 @@ def create_app(test_config=None):
     from . import auth
     app.register_blueprint(auth.bp)
 
+    
 
     return app
