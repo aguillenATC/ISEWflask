@@ -4,7 +4,7 @@ pipeline {
         stage('Testeo') {
             steps{
                 echo 'Comenzamos los test...'
-                sh 'coverage run -m pytest'
+                sh 'coverage run -m pytest --rootdir=./isew'
             }
         }
         stage('Lanza') {
