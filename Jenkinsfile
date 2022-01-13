@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage('Venv') {
             steps{
-                sh 'source isew/venv/bin/activate'
+                sh 'source venv/bin/activate'
             }
         }
         stage('Testeo') {
